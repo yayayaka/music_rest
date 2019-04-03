@@ -8,10 +8,10 @@ import javax.ws.rs.core.MediaType;
 @Path("/hello")
 public class HelloWorld {
     @GET
-//    @Produces(MediaType.TEXT_PLAIN)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Student getMessage() {
-        return new Student();
+    @Produces(MediaType.TEXT_PLAIN)
+//    @Produces(MediaType.APPLICATION_JSON)
+    public String getMessage() {
+        return new Student().toString();
     }
 }
 
@@ -22,5 +22,12 @@ class Student {
     public Student() {
         this.id = 1;
         this.name = "My name";
+    }
+
+    @Override
+    public String toString() {
+        return "Student : \n" +
+                "{ \n id : " + id + ",\n" +
+                "name : " + name + " \n}";
     }
 }
