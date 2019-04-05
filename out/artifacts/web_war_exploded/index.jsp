@@ -6,24 +6,13 @@
   </head>
   <body>
     <script>
-        // var xhr = new XMLHttpRequest(),
-        //     method = "GET",
-        //     url = "https://localhost:8080/test/hello/";
-        //
-        // xhr.open(method, url, true);
-        // xhr.onreadystatechange = function () {
-        //     if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        //         console.log(xhr.responseText);
-        //     };
-        // };
-        // xhr.send();
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", "http://localhost:8080/test/hello");
+        xmlhttp.open("GET", "http://localhost:8080/rest/artists/");//http://localhost:8080/test/hello");
         xmlhttp.onreadystatechange = function()
         {
-            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
             {
-                document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+                document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
             }
         }
         xmlhttp.send(null);

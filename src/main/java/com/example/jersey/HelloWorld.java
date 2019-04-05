@@ -8,8 +8,8 @@ import javax.ws.rs.core.MediaType;
 @Path("/hello")
 public class HelloWorld {
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-//    @Produces(MediaType.APPLICATION_JSON)
+//    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public String getMessage() {
         return new Student().toString();
     }
